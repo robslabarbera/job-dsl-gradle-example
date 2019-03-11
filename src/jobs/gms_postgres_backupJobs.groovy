@@ -42,6 +42,9 @@ popd""")
         wrappers {
 		timestamps()
 	}
+        triggers {
+                             cron("H 0 * * *")
+               }
 	configure {
 		it / 'properties' / 'jenkins.model.BuildDiscarderProperty' {
 			strategy {
