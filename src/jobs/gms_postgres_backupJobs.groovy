@@ -1,4 +1,5 @@
 job("gms_postgres_backup") {
+        label('maven')
 	description("pg_basebackup plus copy wal archives to a gpfs filesystem")
 	keepDependencies(false)
 	disabled(false)
@@ -37,6 +38,9 @@ echo Cleaning up old backup directories
 pushd "\${BACKUP_BASE}" || die "unable to change to postgres backup directory"
 find . -mindepth 1 -maxdepth 1 -type d -daystart -mtime +\${KEEP_DAYS} -exec /bin/rm -rf {} \\; || die "unable to remove old backups"
 popd""")
+	}
+        wrappers {
+		timestamps()
 	}
 	configure {
 		it / 'properties' / 'jenkins.model.BuildDiscarderProperty' {
