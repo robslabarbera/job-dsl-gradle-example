@@ -2,7 +2,7 @@ job("csp-cron") {
 	description("confirm_scheduled_pse_cron")
 	label('maven')
         keepDependencies(false)
-	disabled(false)
+	disabled(true)
 	concurrentBuild(false)
 	steps {
 		shell("""#!/bin/bash

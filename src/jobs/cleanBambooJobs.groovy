@@ -1,7 +1,7 @@
 job("Clean Bamboo XML") {
 	description()
 	keepDependencies(false)
-	disabled(false)
+	disabled(true)
 	concurrentBuild(false)
 	steps {
 		shell("""#!/bin/bash

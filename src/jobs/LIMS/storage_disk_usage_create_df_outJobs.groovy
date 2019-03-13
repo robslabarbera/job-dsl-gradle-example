@@ -14,7 +14,7 @@ In particular, it reveals what volumes are in each Disk Group.""")
 			branch("*/master")
 		}
 	}
-	disabled(false)
+	disabled(true)
 	concurrentBuild(false)
 	steps {
 		shell("""#!/bin/bash -l

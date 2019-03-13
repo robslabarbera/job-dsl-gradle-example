@@ -2,7 +2,7 @@ job("gms_postgres_backup") {
         label('maven')
 	description("pg_basebackup plus copy wal archives to a gpfs filesystem")
 	keepDependencies(false)
-	disabled(false)
+	disabled(true)
 	concurrentBuild(false)
 	steps {
 		shell("""#!/usr/bin/env bash
